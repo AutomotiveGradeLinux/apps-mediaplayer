@@ -174,14 +174,14 @@ ApplicationWindow {
                             //ToggleButton {
                             //    id: random
                             //    visible: bluetooth.connected == false
-                            //    offImage: './images/AGL_MediaPlayer_Shuffle_Inactive.svg'
-                            //    onImage: './images/AGL_MediaPlayer_Shuffle_Active.svg'
+                            //    offImage: 'qrc:/images/AGL_MediaPlayer_Shuffle_Inactive.svg'
+                            //    onImage: 'qrc:/images/AGL_MediaPlayer_Shuffle_Active.svg'
                             //}
                             ToggleButton {
                                 id: loop
                                 visible: player.av_connected === false
-                                offImage: './images/AGL_MediaPlayer_Loop_Inactive.svg'
-                                onImage: './images/AGL_MediaPlayer_Loop_Active.svg'
+                                offImage: 'qrc:/images/AGL_MediaPlayer_Loop_Inactive.svg'
+                                onImage: 'qrc:/images/AGL_MediaPlayer_Loop_Active.svg'
                                 onClicked: { mediaplayer.loop(checked ? "playlist" : "off") }
                             }
                         }
@@ -228,15 +228,15 @@ ApplicationWindow {
                     RowLayout {
                         Layout.fillHeight: true
 //                        Image {
-//                            source: './images/AGL_MediaPlayer_Playlist_Inactive.svg'
+//                            source: 'qrc:/images/AGL_MediaPlayer_Playlist_Inactive.svg'
 //                        }
 //                        Image {
-//                            source: './images/AGL_MediaPlayer_CD_Inactive.svg'
+//                            source: 'qrc:/images/AGL_MediaPlayer_CD_Inactive.svg'
 //                        }
                         Item { Layout.fillWidth: true }
                         ImageButton {
                             id: previous
-                            offImage: './images/AGL_MediaPlayer_BackArrow.svg'
+                            offImage: 'qrc:/images/AGL_MediaPlayer_BackArrow.svg'
                             onClicked: {
                                 mediaplayer.previous()
                             }
@@ -248,7 +248,7 @@ ApplicationWindow {
                                     when: player.status == "playing"
                                     PropertyChanges {
                                         target: play
-                                        offImage: './images/AGL_MediaPlayer_Player_Pause.svg'
+                                        offImage: 'qrc:/images/AGL_MediaPlayer_Player_Pause.svg'
                                         onClicked: {
                                             mediaplayer.pause()
                                         }
@@ -258,7 +258,7 @@ ApplicationWindow {
                                     when: player.status != "playing"
                                     PropertyChanges {
                                         target: play
-                                        offImage: './images/AGL_MediaPlayer_Player_Play.svg'
+                                        offImage: 'qrc:/images/AGL_MediaPlayer_Player_Play.svg'
                                         onClicked: mediaplayer.play()
                                     }
                                 }
@@ -266,7 +266,7 @@ ApplicationWindow {
                         }
                         ImageButton {
                             id: forward
-                            offImage: './images/AGL_MediaPlayer_ForwardArrow.svg'
+                            offImage: 'qrc:/images/AGL_MediaPlayer_ForwardArrow.svg'
                             onClicked: {
                                 mediaplayer.next()
                             }
@@ -284,7 +284,7 @@ ApplicationWindow {
                                         mediaplayer.disconnect()
                               }
                               contentItem: Image {
-                                source: player.av_connected ? './images/AGL_MediaPlayer_Bluetooth_Active.svg' : './images/AGL_MediaPlayer_Bluetooth_Inactive.svg'
+                                source: player.av_connected ? 'qrc:/images/AGL_MediaPlayer_Bluetooth_Active.svg' : 'qrc:/images/AGL_MediaPlayer_Bluetooth_Inactive.svg'
                               }
                         }
                     }
